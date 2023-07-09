@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>RESUME GENERATOR</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <section class="container">
+    <header>RESUME GENERATOR</header>
+    <div class="form" autocomplete="off">
+      <!-- personal block -->
+      <div class="column">
+        <div class="input-box">
+          <h1 class="dynamic">
+            personal details
+          </h1>
+        </div>
+      </div>
+      <div class="column">
+        <div class="input-box">
+          <label>Full Name</label>
+          <input class="full-name" id="name" type="text" placeholder="Enter full name" required />
+        </div>
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="text" id="email" class="email" placeholder="Enter email address" required />
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="input-box">
+          <label>Phone Number</label>
+          <input type="tel" id="phone" class="phone" placeholder="Enter phone number" required />
+        </div>
+        <div class="input-box">
+          <label>Birth Date</label>
+          <input type="date" id="dob" class="dob" placeholder="Enter birth date" required/>
+        </div>
+      </div>
+      <div class="column">
+        <div class="input-box">
+          <label>Title</label>
+          <input type="text" id="title" class="title" placeholder="Enter title" required />
+        </div>
+      <div class="input-box">
+        <label>Summary</label>
+        <textarea name="achievement_desc" class="summary" placeholder="describe in few words" id="summary" cols="5"
+          rows="20"></textarea>
+      </div>
+      </div>
+      <div class="column">
+        <div class="gender-box">
+          <h3>Gender</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input onclick="handleChange()" type="radio" id="check-male" name="gender" value="male" checked />
+              <label for="check-male">male</label>
+            </div>
+            <div class="gender">
+              <input onclick="handleChange()" type="radio" id="check-female" name="gender" value="female" />
+              <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+              <input onclick="handleChange()" type="radio" id="check-other" name="gender" value="prefer not to say" />
+              <label for="check-other">prefer not to say</label>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <div class="input-box address">
+        <label>Address</label>
+        <input class="address" id="address" type="text" placeholder="Enter street address" required />
+        <input class="street-address" id="street-address" type="text" placeholder="Enter street address line 2"
+          required />
+        <div class="column">
+          <input type="text" id="country" class="country" placeholder="Enter your country" required />
+          <input class="city" id="city" type="text" placeholder="Enter your city" required />
+        </div>
+        <div class="column">
+          <input type="text" id="landmark" class="landmark" placeholder="Enter your landmark" required />
+          <input class="postal" id="postal" type="tel" placeholder="Enter postal code" required />
+        </div>
+      </div>
+
+      <!-- personal block -->
+
+      <!-- education block -->
+      <div class="column">
+        <div class="input-box">
+          <h1 class="dynamic">
+            education &nbsp; &nbsp;<button class="education_add">
+              &#10010;
+            </button>
+          </h1>
+        </div>
+      </div>
+
+      <div class="education_wrapper">
+        <div class="education">
+          <div class="column">
+            <div class="input-box">
+              <label>Degree</label>
+              <input id="degree" name="degree" type="text" placeholder="Enter qualification" required />
+            </div>
+            <div class="input-box">
+              <label>University/College</label>
+              <input id="university" name="university" type="text" placeholder="Enter University/College" required />
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="input-box">
+              <label>start month</label>
+              <input id="edu-start" name="education_start_date" type="month" placeholder="Enter birth date" required />
+            </div>
+            <div class="input-box">
+              <label>end month</label>
+              <input id="edu-end" name="education_end_date" type="month" placeholder="Enter birth date" required />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- education block -->
+
+
+      <!-- achievements block -->
+      <div class="column">
+        <div class="input-box">
+          <h1 class="dynamic">
+            achievements &nbsp; &nbsp;<button class="achievement_add">
+              &#10010;
+            </button>
+          </h1>
+        </div>
+      </div>
+      <div class="achievement_wrapper">
+
+        <div class="input-box">
+          <label>Details</label>
+          <textarea name="achievement_desc" class="is" placeholder="describe in few words" id="" cols="5"
+            rows="20"></textarea>
+        </div>
+      </div>
+      <!-- achievements block -->
+
+
+      <!-- experience block -->
+      <div class="column">
+        <div class="input-box">
+          <h1 class="dynamic">
+            experience &nbsp; &nbsp;<button class="add">
+              &#10010;
+            </button>
+          </h1>
+        </div>
+      </div>
+
+      <div class="expwrapper">
+        <div class="experience">
+          <div class="column">
+            <div class="input-box">
+              <label>job title</label>
+              <input name="job" type="text" placeholder="Enter designation" required />
+            </div>
+            <div class="input-box">
+              <label>company</label>
+              <input name="company" type="text" placeholder="Enter company" required />
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="input-box">
+              <label>start month</label>
+              <input name="exp_start_date" id="exp_start" type="month" placeholder="Enter birth date" required />
+            </div>
+            <div class="input-box">
+              <label>end month</label>
+              <input name="exp_end_date" id="exp_end" type="month" placeholder="Enter birth date" required />
+            </div>
+          </div>
+
+          <div class="input-box">
+            <label>Details</label>
+            <textarea name="exp_desc" class="is" placeholder="Describe in few words" id="" cols="5"
+              rows="20"></textarea>
+          </div>
+        </div>
+      </div>
+      <!-- experience block -->
+
+      <!-- skills block -->
+      <div class="column">
+        <div class="input-box">
+          <h1 class="dynamic">
+            expertise &nbsp; &nbsp;<button class="skilladd">
+              &#10010;
+            </button>
+          </h1>
+        </div>
+      </div>
+      <div class="skillwrapper">
+        <div class="skill">
+          <div class="column">
+            <div class="input-box">
+              <label>skill</label>
+              <input name="skill" type="text" placeholder="Enter skill" required />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- skills block -->
+
+
+      <!-- language block -->
+      <div class="column">
+        <div class="input-box">
+          <h1 class="dynamic">
+            languages &nbsp; &nbsp;<button class="language_add">
+              &#10010;
+            </button>
+          </h1>
+
+        </div>
+      </div>
+      <div class="language_wrapper">
+        <div class="skill">
+          <div class="column">
+            <div class="input-box">
+              <label>language</label>
+              <input name="language" type="text" placeholder="Enter language" required />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- language block -->
+
+
+      <!-- socials block -->
+      <div class="column">
+        <div class="input-box">
+          <h1 class="dynamic">
+            socials &nbsp; &nbsp;<button class="socials_add">
+              &#10010;
+            </button>
+          </h1>
+
+        </div>
+      </div>
+      <div class="socials_wrapper">
+        <div class="skill">
+          <div class="column">
+            <div class="input-box">
+              <label>links</label>
+              <input name="socials" type="text" placeholder="Enter links" required />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- socials block -->
+
+
+      <!-- certificate block -->
+      <div class="column">
+        <div class="input-box">
+          <h1 class="dynamic">
+            certificate &nbsp; &nbsp;<button class="certificate_add">
+              &#10010;
+            </button>
+          </h1>
+
+        </div>
+      </div>
+      <div class="certificate_wrapper">
+        <div class="skill">
+          <div class="column">
+            <div class="input-box">
+              <label>certificates</label>
+              <input name="certificate" type="text" placeholder="Enter certificates" required />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- certificate block -->
+      <button class="log">Submit</button>
+    </div>
+    </div>
+    </div>
+  </section>
+</body>
+
+</html>
