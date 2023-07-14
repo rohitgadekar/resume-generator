@@ -51,6 +51,8 @@ Clone the project
 
 
 ![App Screenshot](https://res.cloudinary.com/eaglestudiosindia/image/upload/v1689335670/github/Screenshot_from_2023-07-14_17-24-16_bdb8ps.png)
+
+![App Screenshot](https://res.cloudinary.com/eaglestudiosindia/image/upload/v1689335919/github/Resume_1__page-0001_ym4rbt.jpg)
 ## Feedback
 
 If you have any feedback, please reach out to me at rohitgadekar@outlook.in
